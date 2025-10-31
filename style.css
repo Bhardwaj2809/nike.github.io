@@ -57,7 +57,7 @@ nav {
 
 .slider {
     background: url("https://images.unsplash.com/photo-1604147495798-57beb5d6af73?ixlib=rb- 1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80");
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 80%);
     overflow: hidden;
     height: 90vh;
 }
@@ -83,11 +83,9 @@ nav {
     position: absolute;
 }
 
-.sliderImg {
-    z-index: 1;
-}
-
+/* Fix: Make slider title invisible but keep structure */
 .sliderTitle {
+    visibility: hidden; 
     position: absolute;
     top: 10%;
     right: 10%;
@@ -98,11 +96,14 @@ nav {
     z-index: 1;
 }
 
+.sliderImg {
+    z-index: 1;
+}
+
 .sliderPrice {
     position: absolute;
-    top: 10%;
+    top: 25%; /* Adjusted vertical position */
     right: 10%;
-    margin-top: 100px; /* Adjust to place below title */
     font-size: 60px;
     font-weight: 300;
     text-align: center;
@@ -113,7 +114,7 @@ nav {
 
 .buyButton {
     position: absolute;
-    top: 50%;
+    top: 45%; /* Adjusted vertical position */
     right: 10%;
     font-size: 30px;
     font-weight: 900;
@@ -157,7 +158,7 @@ nav {
     color: white;
 }
 
-.sliderItem:nth-child(3) .sliderPrice {
+.sliderItem:nth-child(3) .sliderPrice {    
     color: teal;
 }
 
@@ -223,20 +224,19 @@ nav {
     font-size: 14px;
 }
 
-/* New style for the combined product details section */
 .productDetailsSection {
     display: flex;
-    flex-direction: column; /* Stack size and button vertically */
-    align-items: center; /* Center them horizontally */
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    margin-top: 30px; /* Space from features above */
-    background-color: #f8f8f8; /* Light background for visibility */
+    margin-top: 30px;
+    background-color: #f8f8f8;
     border-top: 1px solid #eee;
 }
 
 .sizes {
     display: flex;
-    margin-bottom: 20px; /* Space between sizes and buy button */
+    margin-bottom: 20px;
 }
 
 .sizes h3 {
@@ -252,7 +252,6 @@ nav {
 }
 
 .productButton {
-    /* float: right; Removed float as it messes with flexbox */
     padding: 10px 20px;
     background-color: black;
     color: white;
@@ -264,7 +263,6 @@ nav {
     background-color: white;
     color: black;
 }
-
 
 .product {
     height: 100vh;
@@ -394,7 +392,6 @@ label {
     background-color: darkblue;
 }
 
-
 .gallery {
     padding: 50px;
     display: flex;
@@ -407,36 +404,6 @@ label {
 
 .galleryImg {
     width: 100%;
-}
-
-.newSeason {
-    display: flex;
-}
-
-.nsItem {
-    flex: 1;
-    background-color: black;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.nsImg {
-    width: 100%;
-    height: 500px;
-}
-
-.nsTitle {
-    font-size: 40px;
-}
-
-.nsButton {
-    padding: 15px;
-    font-weight: 600;
-    cursor: pointer;
 }
 
 footer {
@@ -498,6 +465,9 @@ footer {
     font-size: 14px;
 }
 
+/* ---------------------------------------------------- */
+/* --- MOBILE VIEW FIXES FOR SLIDER CONTENT --- */
+/* ---------------------------------------------------- */
 @media screen and (max-width:480px) {
     nav {
         padding: 20px;
@@ -519,36 +489,41 @@ footer {
 
     .slider {
         clip-path: none;
+        height: 80vh; /* Reduced height on mobile */
+    }
+    
+    .sliderBg {
+        width: 400px; /* Reduced circle size on mobile */
+        height: 400px;
     }
 
     .sliderImg {
         width: 90%;
-    }
-
-    .sliderBg {
-        width: 100%;
-        height: 100%;
+        margin-top: 10vh; /* Push image down slightly */
     }
 
     .sliderTitle {
-        display: none;
+        display: none; /* Already hidden, but good practice to keep */
     }
 
     .sliderPrice {
-        top: unset;
-        bottom: -50;
-        left: 0;
-        background-color: lightgrey;
+        top: 60%; /* Pushed price further down to clear the shoe */
+        right: 5%; /* Pulled right to the edge */
+        font-size: 40px; /* Reduced size for mobile */
+        border: none;
     }
 
     .buyButton {
-        right: 0;
-        top: 0;
+        top: 75%; /* Pushed button below the price */
+        right: 5%; /* Pulled right to the edge */
+        font-size: 20px; /* Reduced size for mobile */
+        padding: 8px 15px;
     }
 
     .features {
         flex-direction: column;
     }
+    /* ... (rest of the mobile queries) */
 
     .product {
         clip-path: none;
@@ -581,19 +556,6 @@ footer {
         display: none;
     }
 
-    .newSeason {
-        flex-direction: column;
-    }
-
-    .nsItem:nth-child(2) {
-        padding: 50px;
-    }
-
-    footer {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .footerLeft {
         padding: 20px;
         width: 90%;
@@ -611,4 +573,3 @@ footer {
         padding: 20px;
     }
 }
-
