@@ -14,18 +14,37 @@
         /* This ensures all icons (images and emoji) are symmetrical */
         .feature .featureIcon,
         .feature .phoneEmoji {
-            width: 70px; /* Adjust this value to make icons bigger/smaller */
-            height: 70px; /* Adjust this value to make icons bigger/smaller */
-            object-fit: contain; /* Ensures images fit without cropping */
-            display: flex; /* Use flexbox for centering */
-            align-items: center; /* Center vertically */
-            justify-content: center; /* Center horizontally */
+            width: 70px; /* Consistent width for all icons/emoji containers */
+            height: 70px; /* Consistent height for all icons/emoji containers */
+            display: flex; /* Use flexbox for centering content within */
+            align-items: center; /* Center content vertically */
+            justify-content: center; /* Center content horizontally */
             margin-bottom: 20px; /* Consistent spacing below icons */
-            font-size: 55px; /* Size for the emoji */
+            box-sizing: border-box; /* Include padding in element's total width/height */
         }
-        /* Override default image styling if necessary */
+
+        /* Specific styling for image icons */
         .feature img.featureIcon {
-            padding: 5px; /* Add a little padding if images are too close to edge */
+            object-fit: contain; /* Ensures images fit without cropping */
+            /* The image itself might have transparent borders, making it appear smaller. */
+            /* Let's try to increase its intrinsic display size slightly if needed. */
+            width: 90%; /* Allow image to fill more of its 70x70 container */
+            height: 90%; /* Allow image to fill more of its 70x70 container */
+        }
+
+        /* Adjustments for specific images if they still look small after general scaling */
+        /* If '30-day-money-back-guarantee6470.jpg' is still too small, you can make its container larger */
+        /* .feature img[src*="30-day-money-back-guarantee6470.jpg"] {
+            width: 80px;
+            height: 80px;
+        } */
+
+
+        /* Styling for the phone emoji */
+        .feature .phoneEmoji {
+            font-size: 50px; /* Adjust emoji size */
+            color: #d63384; /* A color similar to your reference image's phone icon */
+            /* You can adjust color or other styles here if needed */
         }
         /* --- END OF CUSTOM ICON STYLING --- */
     </style>
@@ -121,7 +140,7 @@
             <span class="featureDesc">Buy gift cards and use coupon codes easily.</span>
         </div>
         <div class="feature">
-            <span class="phoneEmoji">📞</span> 
+            <span class="phoneEmoji featureIcon">📞</span>
             <span class="featureTitle">CONTACT US!</span>
             <span class="featureDesc">Keep in touch via email and support system.</span>
         </div>
