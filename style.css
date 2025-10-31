@@ -83,7 +83,6 @@ nav {
     position: absolute;
 }
 
-/* Fix: Make slider title invisible but keep structure */
 .sliderTitle {
     visibility: hidden; 
     position: absolute;
@@ -102,7 +101,7 @@ nav {
 
 .sliderPrice {
     position: absolute;
-    top: 25%; /* Adjusted vertical position */
+    top: 25%; 
     right: 10%;
     font-size: 60px;
     font-weight: 300;
@@ -114,7 +113,7 @@ nav {
 
 .buyButton {
     position: absolute;
-    top: 45%; /* Adjusted vertical position */
+    top: 45%; 
     right: 10%;
     font-size: 30px;
     font-weight: 900;
@@ -465,9 +464,6 @@ footer {
     font-size: 14px;
 }
 
-/* ---------------------------------------------------- */
-/* --- MOBILE VIEW FIXES FOR SLIDER CONTENT --- */
-/* ---------------------------------------------------- */
 @media screen and (max-width:480px) {
     nav {
         padding: 20px;
@@ -489,41 +485,41 @@ footer {
 
     .slider {
         clip-path: none;
-        height: 80vh; /* Reduced height on mobile */
+        height: 80vh; 
     }
     
     .sliderBg {
-        width: 400px; /* Reduced circle size on mobile */
+        width: 400px; 
         height: 400px;
     }
 
     .sliderImg {
         width: 90%;
-        margin-top: 10vh; /* Push image down slightly */
+        margin-top: 10vh; 
     }
 
     .sliderTitle {
-        display: none; /* Already hidden, but good practice to keep */
+        display: none; 
     }
 
     .sliderPrice {
-        top: 60%; /* Pushed price further down to clear the shoe */
-        right: 5%; /* Pulled right to the edge */
-        font-size: 40px; /* Reduced size for mobile */
+        top: 60%; 
+        right: 5%; 
+        font-size: 40px; 
         border: none;
     }
 
     .buyButton {
-        top: 75%; /* Pushed button below the price */
-        right: 5%; /* Pulled right to the edge */
-        font-size: 20px; /* Reduced size for mobile */
+        top: 75%; 
+        right: 5%; 
+        font-size: 20px; 
         padding: 8px 15px;
     }
 
     .features {
         flex-direction: column;
     }
-    /* ... (rest of the mobile queries) */
+    
 
     .product {
         clip-path: none;
@@ -573,3 +569,4 @@ footer {
         padding: 20px;
     }
 }
+
