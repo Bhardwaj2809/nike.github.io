@@ -36,7 +36,7 @@ nav {
 .searchInput::placeholder {
     color: lightgray;
 }
-limitedOffer {
+.limitedOffer {
     font-size: 20px;
     border-bottom: 2px solid green;
     cursor: pointer;
@@ -611,3 +611,4 @@ footer {
         padding: 20px;
     }
 }
+
