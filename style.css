@@ -59,6 +59,7 @@ limitedOffer {
     background: url("https://images.unsplash.com/photo-1604147495798-57beb5d6af73?ixlib=rb- 1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80");
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
     overflow: hidden;
+    height: 90vh;
 }
 
 .sliderWrapper {
@@ -70,9 +71,11 @@ limitedOffer {
 .sliderItem {
     width: 100vw;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     position: relative;
+    padding-bottom: 50px;
 }
 
 .sliderBg {
@@ -80,45 +83,49 @@ limitedOffer {
     height: 750px;
     border-radius: 50%;
     position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .sliderImg {
     z-index: 1;
+    max-height: 80%;
+    margin-top: 50px;
+    object-fit: contain;
 }
 
 .sliderTitle {
-    position: absolute;
-    top: 10%;
-    right: 10%;
+    position: relative;
     font-size: 60px;
     font-weight: 900;
     text-align: center;
     color: white;
-    z-index: 1;
+    z-index: 2;
+    margin-bottom: 10px;
 }
 
 .sliderPrice {
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    font-size: 60px;
+    position: relative;
+    font-size: 40px;
     font-weight: 300;
     text-align: center;
     color: white;
     border: 1px solid gray;
-    z-index: 1;
+    padding: 5px 15px;
+    z-index: 2;
+    margin-bottom: 20px;
 }
 
 .buyButton {
-    position: absolute;
-    top: 50%;
-    right: 10%;
-    font-size: 30px;
+    position: relative;
+    font-size: 24px;
     font-weight: 900;
     color: white;
     border: 1px solid gray;
     background-color: black;
-    z-index: 1;
+    padding: 10px 30px;
+    z-index: 2;
     cursor: pointer;
 }
 
@@ -167,12 +174,10 @@ limitedOffer {
     color: cornsilk;
 }
 
-/* --- FEATURE SECTION ALIGNMENT AND SYMMETRY FIXES --- */
-
 .features {
     display: flex;
-    align-items: flex-start; /* Aligns content to the top of the feature box */
-    justify-content: space-evenly; /* Evenly distributes features across the space */
+    align-items: flex-start;
+    justify-content: space-evenly;
     padding: 50px 20px;
     flex-wrap: wrap;
     gap: 10px;
@@ -187,7 +192,6 @@ limitedOffer {
     margin: 10px;
 }
 
-/* Consistent container for all feature icons/emoji */
 .feature .featureIcon,
 .feature .phoneEmoji {
     width: 90px;
@@ -199,14 +203,12 @@ limitedOffer {
     box-sizing: border-box;
 }
 
-/* Styling for all image icons */
 .feature img.featureIcon {
     object-fit: contain;
     width: 100%;
     height: 100%;
 }
 
-/* Styling for the phone emoji */
 .feature .phoneEmoji {
     font-size: 60px;
     color: #d63384;
@@ -225,7 +227,6 @@ limitedOffer {
     height: auto;
     font-size: 14px;
 }
-/* --- END OF FEATURE SECTION FIXES --- */
 
 .product {
     height: 100vh;
